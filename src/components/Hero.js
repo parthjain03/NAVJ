@@ -1,0 +1,25 @@
+import React from 'react';
+
+export default function Hero() {
+    return (
+        <section id="home">
+            <div className="hero-bg"></div>
+            <div className="hero-content">
+                <div className="hero-rule-top"></div>
+                <p className="hero-eyebrow">Chartered Accountants &nbsp;·&nbsp; Est. 1932</p>
+                <h1 className="hero-name">NAVJ <span>&amp;</span> Co.</h1>
+                <div className="hero-divider">
+                    <span className="hero-divider-text">New Delhi, India</span>
+                </div>
+                <p className="hero-tagline">
+                    Four Generations of Financial Stewardship.<br />
+                    From Darya Ganj to the Global Economy.
+                </p>
+            </div>
+            <div className="hero-scroll">
+                <div className="scroll-line"></div>
+                <span>Scroll</span>
+            </div>
+        </section>
+    );
+}
