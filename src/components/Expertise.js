@@ -10,57 +10,57 @@ export default function Expertise() {
                 <div className="gold-rule"></div>
             </div>
 
-            <div className="expertise-grid">
+            <div className="expertise-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))' }}>
+                {/* Note: The CSS file handles grid-template-columns. 
+                User requested "Force a 2x2 Grid layout on large screens".
+                The global CSS has: grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                To STRICTLY force 2x2 on desktop, we should modify the CSS or inline style.
+                Let's use an inline media query or just rely on CSS if it's correct. 
+                Actually, let's inject a style tag for this component to force it on md screens.
+            */}
+                <style jsx>{`
+                @media (min-width: 900px) {
+                    .expertise-grid {
+                        grid-template-columns: 1fr 1fr !important;
+                    }
+                }
+            `}</style>
 
                 <div className="expertise-card">
                     <p className="exp-number">01</p>
-                    <h3 className="exp-title">Assurance &amp;<br />Regulatory</h3>
-                    <p className="exp-tagline">"Providing the 'True and Fair' view essential for stakeholder trust."</p>
+                    <h3 className="exp-title">Taxation &amp;<br />GST Regulatory</h3>
                     <div className="exp-rule"></div>
-                    <ul className="exp-items">
-                        <li className="exp-item">Statutory Audit &amp; Assurance</li>
-                        <li className="exp-item">Direct &amp; Indirect Tax Litigation (Appeals / Tribunals)</li>
-                        <li className="exp-item">Bank Audits &amp; Stock Audits</li>
-                    </ul>
+                    <p className="exp-tagline" style={{ fontStyle: 'normal', color: 'var(--slate)' }}>
+                        Comprehensive compliance management for direct and indirect taxes. We handle Income Tax representation, Appeals, and end-to-end GST lifecycles—from registration to complex notice handling and advisory.
+                    </p>
                 </div>
 
                 <div className="expertise-card">
                     <p className="exp-number">02</p>
-                    <h3 className="exp-title">International Taxation<br />&amp; FEMA</h3>
-                    <p className="exp-tagline">"Structuring cross-border value to navigate the complexities of the global economy."</p>
+                    <h3 className="exp-title">Audit &amp;<br />Assurance</h3>
                     <div className="exp-rule"></div>
-                    <ul className="exp-items">
-                        <li className="exp-item">Transfer Pricing</li>
-                        <li className="exp-item">India Entry Strategy &amp; FDI Structuring</li>
-                        <li className="exp-item">Expatriate Taxation &amp; FEMA Compliance</li>
-                        <li className="exp-item">Import / Export Structuring &amp; Trade Incentives</li>
-                    </ul>
+                    <p className="exp-tagline" style={{ fontStyle: 'normal', color: 'var(--slate)' }}>
+                        Delivering financial clarity through Statutory, Internal, and Tax Audits. Our approach ensures rigorous compliance with Indian Accounting Standards (Ind AS) and regulatory frameworks.
+                    </p>
                 </div>
 
                 <div className="expertise-card">
                     <p className="exp-number">03</p>
-                    <h3 className="exp-title">Corporate Counsel<br />&amp; Secretarial</h3>
-                    <p className="exp-tagline">"From incorporation to board governance, ensuring compliance at every lifecycle stage."</p>
+                    <h3 className="exp-title">System Development<br />&amp; EDI</h3>
                     <div className="exp-rule"></div>
-                    <ul className="exp-items">
-                        <li className="exp-item">Company Law Matters &amp; Regulatory Filings</li>
-                        <li className="exp-item">Mergers &amp; Acquisitions Due Diligence</li>
-                        <li className="exp-item">Corporate Governance Advisory</li>
-                        <li className="exp-item">Start-up India Registrations</li>
-                    </ul>
+                    <p className="exp-tagline" style={{ fontStyle: 'normal', color: 'var(--slate)' }}>
+                        Beyond accounting, we design financial infrastructures. Specializing in System Development, Process Improvement, and Electronic Data Interchange (EDI) mapping (850/810) for global supply chains.
+                    </p>
                 </div>
 
                 <div className="expertise-card usp">
-                    <p className="usp-badge">Firm Distinction</p>
+                    <p className="usp-badge">Global Reach</p>
                     <p className="exp-number">04</p>
-                    <h3 className="exp-title">Digital Advisory<br />&amp; EDI Solutions</h3>
-                    <p className="exp-tagline">"Bridging the gap between financial compliance and digital supply chains."</p>
+                    <h3 className="exp-title">Global Business<br />Advisory</h3>
                     <div className="exp-rule"></div>
-                    <ul className="exp-items">
-                        <li className="exp-item">Electronic Data Interchange (EDI) mapping — 850 / 810 / 856</li>
-                        <li className="exp-item">AI-driven Information Systems Audit</li>
-                        <li className="exp-item">Back Office Efficiency Modelling</li>
-                    </ul>
+                    <p className="exp-tagline" style={{ fontStyle: 'normal', color: 'var(--slate)' }}>
+                        Strategic guidance for India Entry (FDI), Startup India registration, and cross-border structuring. We empower businesses to navigate the legal landscape from incorporation to expansion.
+                    </p>
                 </div>
 
             </div>

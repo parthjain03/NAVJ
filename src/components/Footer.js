@@ -12,7 +12,7 @@ export default function Footer() {
                     <p className="footer-brand">NAVJ &amp; Co.</p>
                     <p className="footer-tagline">
                         Chartered Accountants<br />
-                        Est. 1932 &nbsp;·&nbsp; New Delhi
+                        Heritage Since 1932 &nbsp;·&nbsp; New Delhi
                     </p>
                 </div>
 
@@ -40,8 +40,8 @@ export default function Footer() {
             </div>
 
             <div className="footer-bottom">
-                <span>&copy; 1932 – <span id="footer-year">{yearText}</span> &nbsp;NAVJ &amp; Co. All rights reserved.</span>
-                <span className="footer-bottom-icai">This website does not constitute solicitation or advertisement as per ICAI guidelines.</span>
+                <span style={{ color: '#cbd5e1' }}>&copy; 2026 NAVJ &amp; Co. All rights reserved.</span>
+                <span className="footer-bottom-icai" style={{ color: '#cbd5e1' }}>This website does not constitute solicitation or advertisement as per ICAI guidelines.</span>
             </div>
         </footer>
     );

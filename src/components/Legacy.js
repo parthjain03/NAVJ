@@ -15,6 +15,8 @@ export default function Legacy() {
                 </blockquote>
             </div>
 
+
+
             <div className="timeline-container">
                 <div className="timeline-spine"></div>
 

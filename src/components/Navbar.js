@@ -1,52 +1,84 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
-    const [isScrolled, setIsScrolled] = useState(false);
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
+    const pathname = usePathname();
 
     useEffect(() => {
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 60);
+            const isHome = pathname === '/';
+            // If not home, always dark (scrolled). If home, dark only after scroll.
+            if (!isHome || window.scrollY > 50) {
+                setScrolled(true);
+            } else {
+                setScrolled(false);
+            }
         };
+
+        // Run immediately on mount/path change
+        handleScroll();
 
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    }, [pathname]);
 
-    const toggleMobileMenu = () => {
-        setMobileMenuOpen(!mobileMenuOpen);
-    };
-
-    const closeMobileMenu = () => {
-        setMobileMenuOpen(false);
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
+        if (!menuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
     };
 
     return (
-        <>
-            <nav id="navbar" className={isScrolled ? 'scrolled' : ''}>
-                <Link href="#home" className="nav-brand">NAVJ &amp; Co.</Link>
-                <ul className="nav-links">
-                    <li><Link href="#legacy">The Legacy</Link></li>
-                    <li><Link href="#expertise">Expertise</Link></li>
-                    <li><Link href="#media">Media</Link></li>
-                    <li><Link href="#leadership">Leadership</Link></li>
-                    <li><Link href="#connect">Connect</Link></li>
-                </ul>
-                <div className="hamburger" id="hamburger" aria-label="Open menu" onClick={toggleMobileMenu}>
-                    <span></span><span></span><span></span>
-                </div>
-            </nav>
+        <nav className={scrolled ? 'scrolled' : ''}>
+            <Link href="/" className="nav-brand">
+                NAVJ &amp; Co.
+            </Link>
 
-            <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`} id="mobile-menu">
-                <button className="close-menu" id="close-menu" aria-label="Close menu" onClick={closeMobileMenu}>&times;</button>
-                <Link href="#legacy" onClick={closeMobileMenu}>The Legacy</Link>
-                <Link href="#expertise" onClick={closeMobileMenu}>Expertise</Link>
-                <Link href="#media" onClick={closeMobileMenu}>Media</Link>
-                <Link href="#leadership" onClick={closeMobileMenu}>Leadership</Link>
-                <Link href="#connect" onClick={closeMobileMenu}>Connect</Link>
+            <div className="hamburger" onClick={toggleMenu}>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-        </>
+
+            <ul className="nav-links desktop-menu">
+                <li><Link href="/">Home</Link></li>
+                <li><Link href="/about">Legacy</Link></li>
+                <li><Link href="/services">Expertise</Link></li>
+                <li><Link href="/media">Media</Link></li>
+                <li><Link href="/leadership">Leadership</Link></li>
+                <li><a href="#connect" onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('connect')?.scrollIntoView({ behavior: 'smooth' });
+                }}>Contact</a></li>
+            </ul>
+
+            <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
+                <button className="close-menu" onClick={toggleMenu}>&times;</button>
+                <Link href="/" onClick={toggleMenu}>Home</Link>
+                <Link href="/about" onClick={toggleMenu}>Legacy</Link>
+                <Link href="/services" onClick={toggleMenu}>Expertise</Link>
+                <Link href="/media" onClick={toggleMenu}>Media &amp; Insights</Link>
+                <Link href="/leadership" onClick={toggleMenu}>Leadership</Link>
+                <a href="#connect" onClick={() => { toggleMenu(); document.getElementById('connect')?.scrollIntoView({ behavior: 'smooth' }); }}>Contact</a>
+            </div>
+
+            <style jsx>{`
+                @media (max-width: 768px) {
+                    .nav-links.desktop-menu {
+                        display: none;
+                    }
+                    .hamburger {
+                        display: flex;
+                    }
+                }
+            `}</style>
+        </nav>
     );
 }
