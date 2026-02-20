@@ -29,7 +29,7 @@ export default function Media() {
                     <span className="media-tag">Podcast Series</span>
                     <h3 className="media-headline">Industry<br />Dialogues</h3>
                     <p className="media-desc">
-                        Hosted by CA. Adeep Veer Jain, these sessions bridge the gap between regulatory policy and business growth — bringing clarity to the MSME sector, foreign investment norms, and the evolving compliance landscape in India.
+                        Hosted by CA. Adeep Veer Jain, these sessions bridge the gap between regulatory policy and business growth. They bring clarity to the MSME sector, foreign investment norms, and the evolving compliance landscape in India.
                     </p>
                     <a
                         href="https://www.youtube.com/@thefieaofficial"

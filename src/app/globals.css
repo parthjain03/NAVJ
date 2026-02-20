@@ -27,6 +27,7 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    overflow-x: hidden;
 }
 
 body {
@@ -71,6 +72,8 @@ div {
 ═══════════════════════════════════════════ */
 section {
     scroll-margin-top: 80px;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 .section-header {
@@ -196,15 +199,29 @@ section {
 }
 
 #disclaimer-modal ol {
-    padding-left: 1.5rem;
+    padding-left: 0;
     margin-bottom: 2rem;
+    list-style: none;
+    counter-reset: disclaimer-counter;
 }
 
 #disclaimer-modal ol li {
     font-size: 0.8125rem;
     line-height: 1.7;
     color: var(--slate);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+    padding-left: 2rem;
+    position: relative;
+    counter-increment: disclaimer-counter;
+}
+
+#disclaimer-modal ol li::before {
+    content: counter(disclaimer-counter, lower-roman) ".";
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-weight: 700;
+    font-family: var(--font-lato), sans-serif;
 }
 
 #disclaimer-modal .modal-footer-text {
@@ -304,6 +321,14 @@ nav.scrolled {
 }
 
 .nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a.nav-active {
+    color: var(--gold);
+}
+
+.nav-links a.nav-active::after {
     width: 100%;
 }
 
@@ -535,23 +560,22 @@ nav.scrolled {
 ═══════════════════════════════════════════ */
 #legacy {
     background: var(--cream);
-    padding: 10rem 2rem;
+    padding: 8rem 2rem;
 }
 
 .legacy-narrative {
-    max-width: 800px;
-    margin: 0 auto 8rem;
+    max-width: 750px;
+    margin: 0 auto 5rem;
     text-align: center;
 }
 
 .legacy-narrative blockquote {
     font-family: var(--font-playfair), serif;
-    font-size: clamp(1.4rem, 3vw, 2rem);
-    /* Larger */
+    font-size: clamp(1.3rem, 2.5vw, 1.75rem);
     font-style: italic;
-    color: var(--slate);
-    line-height: 1.6;
-    padding: 0 1rem;
+    color: var(--navy);
+    line-height: 1.7;
+    padding: 2rem 3rem;
     position: relative;
     font-weight: 500;
 }
@@ -559,37 +583,51 @@ nav.scrolled {
 .legacy-narrative blockquote::before {
     content: '\201C';
     font-family: var(--font-playfair), serif;
-    font-size: 6rem;
+    font-size: 5rem;
     color: var(--gold);
-    opacity: 0.25;
+    opacity: 0.3;
     position: absolute;
-    top: -2rem;
-    left: -1rem;
+    top: -1rem;
+    left: 0;
     line-height: 1;
 }
 
-/* Timeline */
+.legacy-narrative blockquote::after {
+    content: '\201D';
+    font-family: var(--font-playfair), serif;
+    font-size: 5rem;
+    color: var(--gold);
+    opacity: 0.3;
+    position: absolute;
+    bottom: -2.5rem;
+    right: 0;
+    line-height: 1;
+}
+
+/* Timeline Container */
 .timeline-container {
     max-width: 1000px;
     margin: 0 auto;
     position: relative;
+    padding: 4rem 0;
 }
 
+/* The vertical spine */
 .timeline-spine {
     position: absolute;
     left: 50%;
-    transform: translateX(-0.5px);
     top: 0;
     bottom: 0;
-    width: 1px;
-    background: linear-gradient(to bottom, var(--gold), rgba(197, 160, 89, 0.08));
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, var(--gold) 10%, var(--gold) 90%, transparent);
+    transform: translateX(-50%);
 }
 
+/* Each timeline row */
 .timeline-item {
     display: grid;
-    grid-template-columns: 1fr 80px 1fr;
-    align-items: start;
-    margin-bottom: 6rem;
+    grid-template-columns: 1fr 60px 1fr;
+    margin-bottom: 5rem;
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.7s ease, transform 0.7s ease;
@@ -600,6 +638,7 @@ nav.scrolled {
     transform: translateY(0);
 }
 
+/* Odd items: content on the right */
 .timeline-item:nth-child(odd) .tl-spacer {
     grid-column: 1;
     grid-row: 1;
@@ -613,15 +652,14 @@ nav.scrolled {
 .timeline-item:nth-child(odd) .tl-content {
     grid-column: 3;
     grid-row: 1;
-    text-align: left;
-    padding-left: 3rem;
+    padding-left: 2.5rem;
 }
 
+/* Even items: content on the left */
 .timeline-item:nth-child(even) .tl-content {
     grid-column: 1;
     grid-row: 1;
-    text-align: right;
-    padding-right: 3rem;
+    padding-right: 2.5rem;
 }
 
 .timeline-item:nth-child(even) .tl-center {
@@ -634,73 +672,96 @@ nav.scrolled {
     grid-row: 1;
 }
 
+/* The centre column with dot + year */
 .tl-center {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 0.4rem;
+    padding-top: 1.5rem;
 }
 
+/* The gold ring dot */
 .tl-dot {
-    width: 18px;
-    height: 18px;
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
-    background: var(--cream);
-    border: 4px solid var(--gold);
-    /* Thicker border */
+    background: var(--gold);
+    border: 3px solid var(--cream);
     position: relative;
     z-index: 2;
     flex-shrink: 0;
-    box-shadow: 0 0 0 4px var(--cream);
-    /* Gap effect */
+    box-shadow: 0 0 0 3px var(--gold);
 }
 
+/* Year label */
 .tl-year {
     font-family: var(--font-cinzel), serif;
-    font-size: 0.85rem;
-    letter-spacing: 0.1em;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
     color: var(--gold);
-    margin-top: 1rem;
+    margin-top: 0.75rem;
     white-space: nowrap;
     font-weight: 700;
 }
 
+/* Content card */
+.tl-content {
+    background: var(--white);
+    padding: 2rem 2.5rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 12px rgba(10, 25, 47, 0.06);
+    border: 1px solid rgba(10, 25, 47, 0.06);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tl-content:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(10, 25, 47, 0.1);
+}
+
+/* Content title */
 .tl-content-title {
     font-family: var(--font-playfair), serif;
-    /* Playfair title */
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 700;
     color: var(--navy);
     letter-spacing: -0.01em;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
+    text-align: left;
 }
 
+/* Content subtitle */
 .tl-content-sub {
     font-family: var(--font-lato), sans-serif;
-    font-size: 0.95rem;
+    font-size: 0.8rem;
     font-weight: 700;
     color: var(--gold);
-    letter-spacing: 0.05em;
+    letter-spacing: 0.12em;
     margin-bottom: 1rem;
     text-transform: uppercase;
+    text-align: left;
 }
 
+/* Content body */
 .tl-content-body {
     font-family: var(--font-lato), sans-serif;
-    font-size: 1rem;
-    line-height: 1.8;
+    font-size: 0.95rem;
+    line-height: 1.75;
     color: var(--slate);
+    text-align: left;
 }
 
+/* Mobile: single column, content always on right of spine */
 @media (max-width: 768px) {
     .timeline-spine {
-        left: 24px;
+        left: 20px;
     }
 
     .timeline-item {
         display: flex;
         flex-direction: row;
-        margin-bottom: 4rem;
+        margin-bottom: 3rem;
     }
 
     .tl-spacer {
@@ -710,14 +771,14 @@ nav.scrolled {
     .tl-center {
         flex-direction: column;
         align-items: center;
-        margin-right: 1.5rem;
-        min-width: 48px;
+        margin-right: 1.25rem;
+        min-width: 40px;
+        padding-top: 1.5rem;
     }
 
     .timeline-item:nth-child(even) .tl-content,
     .timeline-item:nth-child(odd) .tl-content {
-        text-align: left;
-        padding: 0;
+        padding: 1.5rem;
     }
 
     .timeline-item:nth-child(even) .tl-center,
@@ -731,18 +792,15 @@ nav.scrolled {
 ═══════════════════════════════════════════ */
 #expertise {
     background: var(--cream);
-    padding: 10rem 2rem;
+    padding: 8rem 2rem;
     /* Removed border top for seamless flow */
 }
 
 .expertise-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    /* Better responsiveness */
+    grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
     gap: 2rem;
-    /* Increased gap */
     max-width: 1200px;
-    /* Wider container */
     margin: 0 auto;
 }
 
@@ -879,10 +937,10 @@ nav.scrolled {
 
 .exp-tagline {
     font-family: var(--font-lato), sans-serif;
-    font-size: 1.1rem;
-    font-style: italic;
-    color: var(--text-muted);
-    line-height: 1.6;
+    font-size: 1rem;
+    font-style: normal;
+    color: var(--slate);
+    line-height: 1.7;
     margin-bottom: 2rem;
 }
 
@@ -936,7 +994,7 @@ nav.scrolled {
 #media {
     background: var(--cream);
     /* Changed from Navy to Cream */
-    padding: 10rem 2rem;
+    padding: 8rem 2rem;
 }
 
 #media .section-eyebrow {
@@ -1201,7 +1259,7 @@ nav.scrolled {
 #leadership {
     background: var(--cream);
     /* Changed from Navy to Cream */
-    padding: 10rem 2rem;
+    padding: 8rem 2rem;
 }
 
 #leadership .section-eyebrow {
@@ -1323,6 +1381,8 @@ nav.scrolled {
     display: flex;
     gap: 0.8rem;
     flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2rem;
 }
 
 .credential-badge {
@@ -1333,6 +1393,73 @@ nav.scrolled {
     border: 1px solid rgba(10, 25, 47, 0.2);
     padding: 0.4rem 1rem;
     font-weight: 700;
+}
+
+/* Chairman Spotlight */
+.chairman-spotlight {
+    max-width: 900px;
+    margin: 0 auto 6rem;
+    text-align: center;
+}
+
+.spotlight-photo-container {
+    width: 220px;
+    height: 220px;
+    margin: 0 auto 2rem;
+    position: relative;
+    border-radius: 50%;
+    padding: 6px;
+    border: 1px solid var(--navy);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+.spotlight-photo-inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid var(--gold);
+    overflow: hidden;
+}
+
+.spotlight-photo-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.spotlight-name {
+    font-family: var(--font-playfair), serif;
+    font-size: 2.5rem;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.spotlight-role {
+    font-family: var(--font-lato), sans-serif;
+    color: var(--gold);
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.spotlight-rule {
+    width: 80px;
+    height: 1px;
+    background: var(--navy);
+    margin: 0 auto 2rem;
+}
+
+.spotlight-bio {
+    font-family: var(--font-lato), sans-serif;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--slate);
+    max-width: 750px;
+    margin: 0 auto;
 }
 
 /* Partners */
@@ -1497,4 +1624,168 @@ footer {
     font-size: 0.8rem;
     letter-spacing: 0.1em;
     color: rgba(253, 252, 240, 0.3);
+}
+
+.footer-copyright,
+.footer-bottom-icai {
+    color: rgba(253, 252, 240, 0.3);
+}
+
+/* ═══════════════════════════════════════════
+   MOBILE RESPONSIVE — 768px and below
+═══════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+    /* Prevent horizontal overflow */
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Navbar */
+    nav {
+        padding: 1rem 1.5rem;
+    }
+
+    nav.scrolled {
+        padding: 0.8rem 1.5rem;
+    }
+
+    .nav-brand {
+        font-size: 1.2rem;
+    }
+
+    /* Hero */
+    #home {
+        min-height: 100vh;
+    }
+
+    .hero-name {
+        font-size: clamp(2.5rem, 12vw, 4rem);
+    }
+
+    .hero-eyebrow {
+        font-size: 0.65rem;
+        letter-spacing: 0.2em;
+    }
+
+    .hero-tagline {
+        font-size: 1rem;
+    }
+
+    .hero-divider::before,
+    .hero-divider::after {
+        width: 30px;
+    }
+
+    /* Section Commons */
+    .section-header {
+        margin-bottom: 3rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .section-lead {
+        font-size: 0.95rem;
+    }
+
+    /* Legacy */
+    #legacy {
+        padding: 4rem 1.25rem;
+    }
+
+    .legacy-narrative {
+        margin-bottom: 3rem;
+    }
+
+    .legacy-narrative blockquote {
+        font-size: 1.1rem;
+        padding: 1.5rem 1rem;
+    }
+
+    /* Expertise */
+    #expertise {
+        padding: 4rem 1.25rem;
+    }
+
+    .expertise-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .expertise-card {
+        padding: 2.5rem 2rem;
+    }
+
+    .exp-title {
+        font-size: 1.4rem;
+    }
+
+    /* Media */
+    #media {
+        padding: 4rem 1.25rem;
+    }
+
+    .media-feature {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-strip {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+
+    /* Leadership */
+    #leadership {
+        padding: 4rem 1.25rem;
+    }
+
+    .spotlight-name {
+        font-size: 1.8rem;
+    }
+
+    .spotlight-photo-container {
+        width: 160px;
+        height: 160px;
+    }
+
+    .spotlight-bio {
+        font-size: 0.95rem;
+    }
+
+    .board-partners {
+        grid-template-columns: 1fr !important;
+    }
+
+    .board-partner-card {
+        padding: 2rem 1.5rem;
+    }
+
+    /* Footer */
+    .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        text-align: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    /* About page Culture/Philosophy sections */
+    .grid.grid-cols-1.md\:grid-cols-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .grid.grid-cols-1.md\:grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+
+    /* Disclaimer modal */
+    #disclaimer-modal {
+        padding: 2rem 1.5rem;
+    }
 }

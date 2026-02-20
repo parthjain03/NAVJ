@@ -4,6 +4,7 @@ import Expertise from '@/components/Expertise';
 
 export default function ServicesPage() {
     useEffect(() => {
+        document.title = 'Expertise | NAVJ & Co.';
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {

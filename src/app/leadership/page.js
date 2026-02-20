@@ -4,6 +4,7 @@ import Leadership from '@/components/Leadership';
 
 export default function LeadershipPage() {
     useEffect(() => {
+        document.title = 'Leadership | NAVJ & Co.';
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {

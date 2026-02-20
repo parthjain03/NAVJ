@@ -4,6 +4,7 @@ import Media from '@/components/Media';
 
 export default function MediaPage() {
     useEffect(() => {
+        document.title = 'Media & Insights | NAVJ & Co.';
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {

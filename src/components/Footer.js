@@ -22,7 +22,7 @@ export default function Footer() {
                         Office No. 204 &amp; 205,<br />
                         4262/3, Ansari Road,<br />
                         Darya Ganj,<br />
-                        New Delhi — 110002
+                        New Delhi, 110002
                     </address>
                 </div>
 
@@ -30,7 +30,7 @@ export default function Footer() {
                     <p className="footer-col-title">Contact</p>
                     <ul className="footer-contact-list">
                         <li><a href="tel:+919810061916">+91 98100 61916</a></li>
-                        <li><a href="tel:01143105497">011 – 4310 5497</a></li>
+                        <li><a href="tel:01143105497">011-4310 5497</a></li>
                         <li style={{ paddingTop: '0.4rem' }}>
                             <a href="mailto:adeepjain.ca@gmail.com">adeepjain.ca@gmail.com</a>
                         </li>
@@ -40,8 +40,8 @@ export default function Footer() {
             </div>
 
             <div className="footer-bottom">
-                <span style={{ color: '#cbd5e1' }}>&copy; 2026 NAVJ &amp; Co. All rights reserved.</span>
-                <span className="footer-bottom-icai" style={{ color: '#cbd5e1' }}>This website does not constitute solicitation or advertisement as per ICAI guidelines.</span>
+                <span className="footer-copyright">&copy; 2026 NAVJ &amp; Co. All rights reserved.</span>
+                <span className="footer-bottom-icai">&copy; This website does not constitute solicitation or advertisement as per ICAI guidelines.</span>
             </div>
         </footer>
     );

@@ -13,7 +13,7 @@ export default function DisclaimerModal() {
     return (
         <div id="disclaimer-overlay">
             <div id="disclaimer-modal">
-                <p className="modal-eyebrow">Important Notice — Please Read Carefully</p>
+                <p className="modal-eyebrow">Important Notice: Please Read Carefully</p>
                 <h2>Disclosure</h2>
                 <p>As per the regulations governing Chartered Accountants in India, we are not permitted to solicit work or advertise for our services. By clicking 'I Agree' below, the user acknowledges the following:</p>
                 <ol>

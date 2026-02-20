@@ -13,7 +13,7 @@ export default function Hero() {
                 </div>
                 <p className="hero-tagline">
                     Four Generations of Financial Stewardship.<br />
-                    From Darya Ganj to the Global Economy.
+                    From Old Delhi to the Global Economy.
                 </p>
             </div>
             {/* Scroll indicator removed as per multi-page design */}
