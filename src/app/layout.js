@@ -1,8 +1,5 @@
 import { Cinzel, Playfair_Display, Lato } from 'next/font/google';
 import "./globals.css";
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import DisclaimerModal from '@/components/DisclaimerModal';
 
 const cinzel = Cinzel({
     subsets: ['latin'],
@@ -33,10 +30,7 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en" className={`${cinzel.variable} ${playfair.variable} ${lato.variable}`}>
             <body className={lato.className}>
-                <DisclaimerModal />
-                <Navbar />
                 {children}
-                <Footer />
             </body>
         </html>
     );
