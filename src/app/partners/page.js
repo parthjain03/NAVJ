@@ -2,9 +2,9 @@
 import React, { useEffect } from 'react';
 import Leadership from '@/components/Leadership';
 
-export default function LeadershipPage() {
+export default function PartnersPage() {
     useEffect(() => {
-        document.title = 'Leadership | NAVJ & Co.';
+        document.title = 'Partners | NAVJ & Co.';
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {

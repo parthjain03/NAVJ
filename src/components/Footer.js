@@ -14,6 +14,13 @@ export default function Footer() {
                         Chartered Accountants<br />
                         Heritage Since 1932 &nbsp;·&nbsp; New Delhi
                     </p>
+                    <p style={{
+                        fontFamily: 'var(--font-lato), sans-serif',
+                        fontSize: '0.7rem',
+                        color: 'rgba(253, 252, 240, 0.35)',
+                        letterSpacing: '0.1em',
+                        marginTop: '0.75rem',
+                    }}>FRN: XXXXXX</p>
                 </div>
 
                 <div>
