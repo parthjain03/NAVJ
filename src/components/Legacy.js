@@ -62,7 +62,7 @@ export default function Legacy() {
                         <p className="tl-content-title">The Modern Era</p>
                         <p className="tl-content-sub">CA. Adeep Veer Jain, Third Generation</p>
                         <p className="tl-content-body">
-                            Formalising the family heritage, CA. Adeep Veer Jain established NAVJ &amp; Co. as a full-service Chartered Accountancy firm. He diversified the practice into comprehensive fields including direct tax, indirect tax, labour law, foreign accounting, and complex litigations. His leadership seamlessly integrated modern global advisory services with the traditional legal rigour of his predecessors.
+                            Formalising the family heritage, CA. Adeep Veer Jain, a law graduate, established NAVJ &amp; Co. as a full-service Chartered Accountancy firm. Leveraging his legal background, he diversified the practice into comprehensive fields including direct tax, indirect tax, labour law, foreign accounting, and complex litigations. His leadership seamlessly integrated modern global advisory services with the traditional legal rigour of his predecessors.
                         </p>
                     </div>
                 </div>
