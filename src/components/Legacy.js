@@ -46,7 +46,7 @@ export default function Legacy() {
                     </div>
                     <div className="tl-center">
                         <div className="tl-dot"></div>
-                        <span className="tl-year">Mid-Century</span>
+                        <span className="tl-year">1962</span>
                     </div>
                     <div className="tl-spacer"></div>
                 </div>

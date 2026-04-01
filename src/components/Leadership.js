@@ -22,19 +22,20 @@ export default function Leadership() {
                 </div>
 
                 <h3 className="spotlight-name">CA. Adeep Veer Jain</h3>
+
+                <div className="credentials-row" style={{ margin: '1rem 0 1.25rem' }}>
+                    <span className="credential-badge">FCA</span>
+                    <span className="credential-badge">CMA</span>
+                    <span className="credential-badge">LLB</span>
+                    <span className="credential-badge">DISA</span>
+                </div>
+
                 <p className="spotlight-role">Managing Partner</p>
                 <div className="spotlight-rule"></div>
 
                 <p className="spotlight-bio">
                     A Fellow Chartered Accountant with over 26 years of multi-disciplinary experience. Holding qualifications in Law (LLB) and Cost Accountancy (CMA), along with DISA (ICAI) certification, Adeep specializes in high-stakes litigation and statutory banking audits. He currently serves as a Statutory Auditor for a major nationalised bank and has deep experience with Public Sector banking institutions.
                 </p>
-
-                <div className="credentials-row">
-                    <span className="credential-badge">FCA</span>
-                    <span className="credential-badge">CMA</span>
-                    <span className="credential-badge">LLB</span>
-                    <span className="credential-badge">DISA</span>
-                </div>
             </div>
 
             {/* Team Grid */}
