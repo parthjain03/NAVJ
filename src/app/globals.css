@@ -152,13 +152,27 @@ section {
     background: var(--cream);
     max-width: 620px;
     width: 90%;
-    padding: 2.5rem 2rem;
     border-top: 4px solid var(--gold);
     border-radius: 12px;
     animation: modalFadeIn 0.7s ease forwards;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#disclaimer-modal-body {
+    padding: 2.5rem 2rem 1.5rem;
     overflow-y: auto;
+    flex: 1;
+}
+
+#disclaimer-modal-footer {
+    padding: 1rem 2rem 1.5rem;
+    background: var(--cream);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 0 0 12px 12px;
+    flex-shrink: 0;
 }
 
 @keyframes modalFadeIn {
@@ -1785,7 +1799,11 @@ footer {
     }
 
     /* Disclaimer modal */
-    #disclaimer-modal {
-        padding: 2rem 1.5rem;
+    #disclaimer-modal-body {
+        padding: 1.5rem 1.5rem 1rem;
+    }
+
+    #disclaimer-modal-footer {
+        padding: 0.875rem 1.5rem 1.25rem;
     }
 }

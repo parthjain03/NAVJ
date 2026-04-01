@@ -1,6 +1,35 @@
 import React from 'react';
+import Link from 'next/link';
 
 export default function Expertise() {
+    const services = [
+        {
+            num: 'I',
+            title: 'Taxation & GST',
+            tagline: 'Comprehensive compliance management for direct and indirect taxes. We handle Income Tax representation, Appeals, and end-to-end GST lifecycles, from registration to complex notice handling and advisory.',
+            href: '/services/taxation',
+        },
+        {
+            num: 'II',
+            title: 'Audit & Assurance',
+            tagline: 'Delivering financial clarity through Statutory, Internal, and Tax Audits. Our approach ensures rigorous compliance with Indian Accounting Standards (Ind AS) and regulatory frameworks.',
+            href: '/services/audit',
+        },
+        {
+            num: 'III',
+            title: 'Advisory & FEMA',
+            tagline: 'Beyond accounting, we design financial infrastructures. Specializing in FEMA compliance, corporate advisory, system development, and Virtual CFO services for growing businesses.',
+            href: '/services/advisory',
+        },
+        {
+            num: 'IV',
+            title: 'International Services',
+            tagline: 'Strategic guidance for India Entry (FDI), NRI taxation, transfer pricing, and cross-border structuring. We empower global businesses to navigate India\'s regulatory landscape.',
+            href: '/services/international',
+            highlight: true,
+        },
+    ];
+
     return (
         <section id="expertise">
             <div className="section-header fade-in">
@@ -19,42 +48,20 @@ export default function Expertise() {
                 }
             `}</style>
 
-                <div className="expertise-card">
-                    <p className="exp-number">I</p>
-                    <h3 className="exp-title">Taxation &amp; GST Regulatory</h3>
-                    <div className="exp-rule"></div>
-                    <p className="exp-tagline">
-                        Comprehensive compliance management for direct and indirect taxes. We handle Income Tax representation, Appeals, and end-to-end GST lifecycles, from registration to complex notice handling and advisory.
-                    </p>
-                </div>
-
-                <div className="expertise-card">
-                    <p className="exp-number">II</p>
-                    <h3 className="exp-title">Audit &amp; Assurance</h3>
-                    <div className="exp-rule"></div>
-                    <p className="exp-tagline">
-                        Delivering financial clarity through Statutory, Internal, and Tax Audits. Our approach ensures rigorous compliance with Indian Accounting Standards (Ind AS) and regulatory frameworks.
-                    </p>
-                </div>
-
-                <div className="expertise-card">
-                    <p className="exp-number">III</p>
-                    <h3 className="exp-title">System Development &amp; EDI</h3>
-                    <div className="exp-rule"></div>
-                    <p className="exp-tagline">
-                        Beyond accounting, we design financial infrastructures. Specializing in System Development, Process Improvement, and Electronic Data Interchange (EDI) mapping (850/810) for global supply chains.
-                    </p>
-                </div>
-
-                <div className="expertise-card usp">
-                    <p className="exp-number">IV</p>
-                    <h3 className="exp-title">Global Business Advisory</h3>
-                    <div className="exp-rule"></div>
-                    <p className="exp-tagline">
-                        Strategic guidance for India Entry (FDI), Startup India registration, and cross-border structuring. We empower businesses to navigate the legal landscape from incorporation to expansion.
-                    </p>
-                </div>
-
+                {services.map((svc) => (
+                    <div key={svc.num} className={`expertise-card ${svc.highlight ? 'usp' : ''}`}>
+                        <p className="exp-number">{svc.num}</p>
+                        <h3 className="exp-title">{svc.title}</h3>
+                        <div className="exp-rule"></div>
+                        <p className="exp-tagline">{svc.tagline}</p>
+                        <Link href={svc.href} className="btn-series" style={{ marginTop: 'auto' }}>
+                            Learn More
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </Link>
+                    </div>
+                ))}
             </div>
         </section>
     );
