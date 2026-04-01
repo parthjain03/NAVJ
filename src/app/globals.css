@@ -1273,7 +1273,11 @@ nav.scrolled {
 #leadership {
     background: var(--cream);
     /* Changed from Navy to Cream */
-    padding: 8rem 2rem;
+    padding: 3rem 2rem 8rem;
+}
+
+#leadership .section-header {
+    margin-bottom: 1.5rem;
 }
 
 #leadership .section-eyebrow {

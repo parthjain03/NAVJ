@@ -8,12 +8,24 @@ export default function Expertise() {
             title: 'Taxation & GST',
             tagline: 'Comprehensive compliance management for direct and indirect taxes. We handle Income Tax representation, Appeals, and end-to-end GST lifecycles, from registration to complex notice handling and advisory.',
             href: '/services/taxation',
+            subServices: [
+                'Income tax advisory and litigation',
+                'GST compliance and litigation',
+                'Corporate Taxation & Advisory',
+                'TDS consultancy'
+            ]
         },
         {
             num: 'II',
             title: 'Audit & Assurance',
             tagline: 'Delivering financial clarity through Statutory, Internal, and Tax Audits. Our approach ensures rigorous compliance with Indian Accounting Standards (Ind AS) and regulatory frameworks.',
             href: '/services/audit',
+            subServices: [
+                'Concurrent Audit',
+                'Inventory Audit',
+                'System Audit',
+                'Special Audit'
+            ]
         },
         {
             num: 'III',
@@ -46,6 +58,29 @@ export default function Expertise() {
                         grid-template-columns: 1fr 1fr !important;
                     }
                 }
+                .sub-services-grid {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 0.75rem;
+                    margin: 1.5rem 0;
+                }
+                .sub-service-pill {
+                    font-size: 0.8125rem;
+                    color: var(--navy);
+                    background: var(--cream);
+                    border: 1px solid rgba(197, 160, 89, 0.2);
+                    padding: 0.5rem 0.75rem;
+                    border-radius: 4px;
+                    font-weight: 500;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                }
+                .sub-service-pill::before {
+                    content: '✦';
+                    color: var(--gold);
+                    font-size: 0.7rem;
+                }
             `}</style>
 
                 {services.map((svc) => (
@@ -54,6 +89,17 @@ export default function Expertise() {
                         <h3 className="exp-title">{svc.title}</h3>
                         <div className="exp-rule"></div>
                         <p className="exp-tagline">{svc.tagline}</p>
+                        
+                        {svc.subServices && (
+                            <div className="sub-services-grid">
+                                {svc.subServices.map((sub) => (
+                                    <div key={sub} className="sub-service-pill">
+                                        {sub}
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+
                         <Link href={svc.href} className="btn-series" style={{ marginTop: 'auto' }}>
                             Learn More
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
