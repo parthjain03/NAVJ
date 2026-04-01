@@ -69,7 +69,7 @@ export default function TaxationPage() {
                                 {[
                                     'GST registration and migration',
                                     'Monthly, quarterly, and annual GST return filing',
-                                    'Input Tax Credit reconciliation and optimization',
+                                    'Input Tax Credit reconciliation and optimisation',
                                     'GST notice handling and departmental response',
                                     'E-way bill compliance and management',
                                     'GST audit and annual return (GSTR-9/9C)',

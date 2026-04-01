@@ -24,7 +24,7 @@ export default function AuditPage() {
         },
         {
             title: 'Internal Audit',
-            desc: 'Systematic evaluation of internal controls, risk management, and governance processes. Our internal audits help organizations strengthen operational efficiency and safeguard assets.',
+            desc: 'Systematic evaluation of internal controls, risk management, and governance processes. Our internal audits help organisations strengthen operational efficiency and safeguard assets.',
         },
         {
             title: 'Tax Audit',
@@ -32,7 +32,7 @@ export default function AuditPage() {
         },
         {
             title: 'Bank Audit',
-            desc: 'Specialized statutory and concurrent audits for Public Sector and nationalised banking institutions. Our team brings deep domain expertise in RBI regulations, NPA classification, and prudential norms.',
+            desc: 'Specialised statutory and concurrent audits for Public Sector and nationalised banking institutions. Our team brings deep domain expertise in RBI regulations, NPA classification, and prudential norms.',
         },
     ];
 
@@ -50,7 +50,7 @@ export default function AuditPage() {
 
                 <div className="max-w-4xl mx-auto fade-in" style={{ marginBottom: '4rem' }}>
                     <p className="tl-content-body" style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto' }}>
-                        Our Audit & Assurance practice delivers independent, rigorous verification of financial statements and internal processes. With deep experience across statutory, internal, tax, and banking audits, we help organizations maintain the highest standards of financial integrity.
+                        Our Audit & Assurance practice delivers independent, rigorous verification of financial statements and internal processes. With deep experience across statutory, internal, tax, and banking audits, we help organisations maintain the highest standards of financial integrity.
                     </p>
                 </div>
 

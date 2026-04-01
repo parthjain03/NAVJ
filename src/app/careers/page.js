@@ -17,9 +17,9 @@ export default function CareersPage() {
     }, []);
 
     const values = [
-        { title: 'Client Satisfaction', body: 'Our prime aim is the satisfaction of our clients. We believe true financial partnership goes beyond compliance, delivering actionable results that empower long-term growth.' },
-        { title: 'Institutional Integrity', body: 'With a lineage of four generations, integrity is our inheritance. We uphold transparency and rigour as the non-negotiable foundations of our professional conduct.' },
-        { title: 'Evolutionary Thinking', body: 'Bridging decades of wisdom with modern digital intelligence. We blend traditional financial ethics with advanced system technology to navigate the global economy.' },
+        { title: 'Client Satisfaction', body: 'Our paramount focus is the complete satisfaction of our clients. We believe a true financial partnership extends beyond basic compliance to deliver actionable results that empower long-term growth.' },
+        { title: 'Institutional Integrity', body: 'With a lineage spanning four generations, integrity is our inheritance. We uphold transparency and rigour as the non-negotiable foundations of our professional conduct.' },
+        { title: 'Evolutionary Thinking', body: 'We bridge decades of wisdom with modern digital intelligence. By blending traditional financial ethics with advanced technological systems, we confidently navigate the global economy.' },
     ];
 
     return (
@@ -39,6 +39,9 @@ export default function CareersPage() {
                 <div style={{ marginBottom: '5rem' }}>
                     <div className="section-header fade-in">
                         <h3 className="section-title">Our Culture</h3>
+                        <p className="section-lead" style={{ textAlign: 'left' }}>
+                            These values are deeply ingrained across our organisation, guiding everyone, from new hires to senior partners, in every client interaction.
+                        </p>
                         <div className="gold-rule"></div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">

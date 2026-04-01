@@ -763,7 +763,7 @@ nav.scrolled {
     font-size: 0.95rem;
     line-height: 1.75;
     color: var(--slate);
-    text-align: justify;
+    text-align: left;
 }
 
 /* Mobile: single column, content always on right of spine */

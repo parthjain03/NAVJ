@@ -24,7 +24,7 @@ export default function AdvisoryPage() {
         },
         {
             title: 'Corporate Advisory',
-            desc: 'Strategic financial advisory for businesses at every stage — from incorporation and structuring to mergers, demergers, and restructuring. We help organizations make informed financial decisions aligned with their growth trajectory.',
+            desc: 'Strategic financial advisory for businesses at every stage — from incorporation and structuring to mergers, demergers, and restructuring. We help organisations make informed financial decisions aligned with their growth trajectory.',
         },
         {
             title: 'System Development & EDI',

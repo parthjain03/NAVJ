@@ -23,7 +23,7 @@ export default function KnowledgePage() {
             category: 'ICAI Updates',
             date: 'March 2026',
             title: 'Understanding the New ICAI 2026 Advertisement Guidelines',
-            excerpt: 'A comprehensive breakdown of the historic liberalization of professional communication rules for CA firms, effective April 1, 2026.',
+            excerpt: 'A comprehensive breakdown of the historic liberalisation of professional communication rules for CA firms, effective April 1, 2026.',
         },
         {
             category: 'International',

@@ -31,7 +31,7 @@ export default function InternationalPage() {
         },
         {
             title: 'NRI Taxation',
-            desc: 'Specialized tax advisory for Non-Resident Indians covering residential status determination, DTAA benefits, capital gains on Indian assets, rental income compliance, and repatriation of funds.',
+            desc: 'Specialised tax advisory for Non-Resident Indians covering residential status determination, DTAA benefits, capital gains on Indian assets, rental income compliance, and repatriation of funds.',
         },
         {
             title: 'Transfer Pricing',
@@ -39,7 +39,7 @@ export default function InternationalPage() {
         },
         {
             title: 'Cross-Border Structuring',
-            desc: 'Strategic structuring of international transactions, holding company arrangements, and treaty planning. We optimize cross-border operations while maintaining full regulatory compliance.',
+            desc: 'Strategic structuring of international transactions, holding company arrangements, and treaty planning. We optimise cross-border operations while maintaining full regulatory compliance.',
         },
     ];
 
