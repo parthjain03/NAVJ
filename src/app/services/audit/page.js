@@ -34,6 +34,22 @@ export default function AuditPage() {
             title: 'Bank Audit',
             desc: 'Specialised statutory and concurrent audits for Public Sector and nationalised banking institutions. Our team brings deep domain expertise in RBI regulations, NPA classification, and prudential norms.',
         },
+        {
+            title: 'Concurrent Audit',
+            desc: 'Continuous, real-time examination of financial transactions to ensure early detection of irregularities, ensuring strict compliance with internal policies and regulatory guidelines.',
+        },
+        {
+            title: 'Inventory Audit',
+            desc: 'Thorough physical verification and valuation of inventory to identify discrepancies, minimize shrinkage, and ensure accurate representation in financial statements.',
+        },
+        {
+            title: 'System Audit',
+            desc: 'In-depth evaluation of IT infrastructure and financial systems. We assess data integrity, system security, and internal controls to mitigate operational risks.',
+        },
+        {
+            title: 'Special Audit',
+            desc: 'Customized audit procedures directed by management or regulators to investigate specific financial discrepancies, fraud allegations, or compliance issues.',
+        },
     ];
 
     return (
@@ -57,7 +73,7 @@ export default function AuditPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                     {services.map((svc, i) => (
                         <div key={i} className="expertise-card fade-in">
-                            <p className="exp-number">{['I', 'II', 'III', 'IV'][i]}</p>
+                            <p className="exp-number">{['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'][i]}</p>
                             <h3 className="exp-title">{svc.title}</h3>
                             <div className="exp-rule"></div>
                             <p className="exp-tagline">{svc.desc}</p>

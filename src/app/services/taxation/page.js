@@ -17,6 +17,25 @@ export default function TaxationPage() {
         return () => observer.disconnect();
     }, []);
 
+    const services = [
+        {
+            title: 'Income Tax Advisory & Litigation',
+            desc: 'Strategic tax planning, return preparation, and robust representation before appellate authorities including CIT(A) and ITAT.',
+        },
+        {
+            title: 'GST Compliance & Litigation',
+            desc: 'End-to-end management of GST life-cycles from registration and return filing to input tax credit optimization and departmental responses.',
+        },
+        {
+            title: 'Corporate Taxation & Advisory',
+            desc: 'Comprehensive advisory services tailored for corporate entities to minimize tax liabilities and ensure strict adherence to direct tax laws.',
+        },
+        {
+            title: 'TDS Consultancy',
+            desc: 'Expert guidance on Tax Deducted at Source compliance, reconciliation, and timely return filing to prevent regulatory penalties.',
+        },
+    ];
+
     return (
         <main style={{ paddingTop: '100px' }}>
             <section className="py-32 px-8">
@@ -35,53 +54,15 @@ export default function TaxationPage() {
                     </p>
                 </div>
 
-                {/* Two-column: Direct Tax | Indirect Tax */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto" style={{ marginBottom: '4rem' }}>
-                    <div className="fade-in">
-                        <div className="expertise-card" style={{ height: '100%' }}>
-                            <p className="exp-number">I</p>
-                            <h3 className="exp-title">Direct Tax</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    {services.map((svc, i) => (
+                        <div key={i} className="expertise-card fade-in">
+                            <p className="exp-number">{['I', 'II', 'III', 'IV'][i]}</p>
+                            <h3 className="exp-title">{svc.title}</h3>
                             <div className="exp-rule"></div>
-                            <ul className="space-y-3" style={{ listStyle: 'none', padding: 0 }}>
-                                {[
-                                    'Income Tax Return preparation and filing',
-                                    'Tax planning and advisory for individuals and corporates',
-                                    'Income Tax representation before CIT(A) and ITAT',
-                                    'Assessment and reassessment proceedings',
-                                    'TDS/TCS compliance and reconciliation',
-                                    'Advance tax computation and planning',
-                                ].map((item, i) => (
-                                    <li key={i} className="flex gap-3">
-                                        <span className="text-[#C5A059]">✦</span>
-                                        <span className="exp-tagline" style={{ marginBottom: 0 }}>{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
+                            <p className="exp-tagline">{svc.desc}</p>
                         </div>
-                    </div>
-
-                    <div className="fade-in">
-                        <div className="expertise-card" style={{ height: '100%' }}>
-                            <p className="exp-number">II</p>
-                            <h3 className="exp-title">Indirect Tax (GST)</h3>
-                            <div className="exp-rule"></div>
-                            <ul className="space-y-3" style={{ listStyle: 'none', padding: 0 }}>
-                                {[
-                                    'GST registration and migration',
-                                    'Monthly, quarterly, and annual GST return filing',
-                                    'Input Tax Credit reconciliation and optimisation',
-                                    'GST notice handling and departmental response',
-                                    'E-way bill compliance and management',
-                                    'GST audit and annual return (GSTR-9/9C)',
-                                ].map((item, i) => (
-                                    <li key={i} className="flex gap-3">
-                                        <span className="text-[#C5A059]">✦</span>
-                                        <span className="exp-tagline" style={{ marginBottom: 0 }}>{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
+                    ))}
                 </div>
 
                 <div className="flex justify-center fade-in">

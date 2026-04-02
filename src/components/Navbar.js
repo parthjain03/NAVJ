@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
+import { Linkedin } from 'lucide-react';
+
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
@@ -67,7 +69,7 @@ export default function Navbar() {
                 <span></span>
             </div>
 
-            <ul className="nav-links desktop-menu">
+            <ul className="nav-links desktop-menu" style={{ alignItems: 'center' }}>
                 {navItems.map(item => (
                     <li key={item.href} className={item.hasDropdown ? 'has-dropdown' : ''}>
                         <Link href={item.href} className={isActive(item.href) ? 'nav-active' : ''}>
@@ -84,6 +86,11 @@ export default function Navbar() {
                         )}
                     </li>
                 ))}
+                <li style={{ marginLeft: '1rem' }}>
+                    <a href="https://www.linkedin.com/company/navj-co" target="_blank" rel="noopener noreferrer" className="nav-social-icon" title="Follow us on LinkedIn">
+                        <Linkedin size={18} />
+                    </a>
+                </li>
             </ul>
 
             <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
