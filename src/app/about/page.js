@@ -1,29 +1,25 @@
-"use client";
-import React, { useEffect } from 'react';
+import React from 'react';
 import Legacy from '@/components/Legacy';
+import FadeInObserver from '@/components/FadeInObserver';
+
+export const metadata = {
+    title: 'The Legacy',
+    description: 'Four generations of financial stewardship since 1932. Discover the story, culture, and philosophy of NAVJ & Co., Chartered Accountants.',
+    openGraph: {
+        title: 'The Legacy | NAVJ & Co.',
+        description: 'Four generations of financial stewardship since 1932.',
+        url: 'https://navjco.com/about',
+    },
+};
 
 export default function AboutPage() {
-    useEffect(() => {
-        document.title = 'The Legacy | NAVJ & Co.';
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.fade-in, .timeline-item').forEach(el => observer.observe(el));
-        return () => observer.disconnect();
-    }, []);
-
     return (
-        <main style={{ paddingTop: '100px' }}>
+        <main style={{ paddingTop: '80px' }}>
+            <FadeInObserver selectors=".fade-in, .timeline-item" />
             <Legacy />
 
             {/* SECTION A: OUR CULTURE */}
-            <section id="culture" className="py-32 px-8">
+            <section id="culture" className="py-16 px-8">
                 <div className="section-header fade-in">
                     <h2 className="section-title">Our Culture</h2>
                     <p className="section-lead" style={{ textAlign: 'left' }}>
@@ -60,7 +56,7 @@ export default function AboutPage() {
             </div>
 
             {/* SECTION B: OUR PHILOSOPHY */}
-            <section id="philosophy" className="py-32 px-8">
+            <section id="philosophy" className="py-16 px-8">
                 <div className="section-header fade-in">
                     <h2 className="section-title">Our Philosophy</h2>
                     <div className="gold-rule"></div>

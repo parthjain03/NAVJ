@@ -25,8 +25,36 @@ const lato = Lato({
 });
 
 export const metadata = {
-    title: "NAVJ & Co. | Chartered Accountants",
-    description: "Chartered Accountants based in New Delhi, India. Est. 1932. Four Generations of Financial Stewardship.",
+    metadataBase: new URL('https://navjco.com'),
+    title: {
+        default: 'NAVJ & Co. | Chartered Accountants, New Delhi',
+        template: '%s | NAVJ & Co.',
+    },
+    description: 'Four generations of financial stewardship since 1932. Leading CA firm in New Delhi specialising in Taxation, GST, Audit, Advisory, FEMA, and International Services.',
+    keywords: ['chartered accountants', 'CA firm New Delhi', 'taxation', 'GST', 'audit', 'FEMA', 'NRI taxation', 'India entry strategy', 'NAVJ'],
+    authors: [{ name: 'NAVJ & Co.' }],
+    openGraph: {
+        siteName: 'NAVJ & Co.',
+        locale: 'en_IN',
+        type: 'website',
+        images: [
+            {
+                url: '/images/og-home.png',
+                width: 1200,
+                height: 630,
+                alt: 'NAVJ & Co. Chartered Accountants, New Delhi. Est. 1932.',
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        site: '@navjco',
+    },
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: { index: true, follow: true },
+    },
 };
 
 export default function RootLayout({ children }) {

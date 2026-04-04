@@ -1,25 +1,21 @@
-"use client";
-import React, { useEffect } from 'react';
+import React from 'react';
 import Expertise from '@/components/Expertise';
+import FadeInObserver from '@/components/FadeInObserver';
+
+export const metadata = {
+    title: 'Services',
+    description: 'Explore NAVJ & Co.\'s four core practice areas: Taxation & GST, Audit & Assurance, Advisory, and International Services, delivered with 90+ years of expertise.',
+    openGraph: {
+        title: 'Services | NAVJ & Co.',
+        description: 'Taxation, Audit, Advisory, and International Services from a premier New Delhi CA firm.',
+        url: 'https://navjco.com/services',
+    },
+};
 
 export default function ServicesPage() {
-    useEffect(() => {
-        document.title = 'Expertise | NAVJ & Co.';
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.fade-in, .expertise-card').forEach(el => observer.observe(el));
-        return () => observer.disconnect();
-    }, []);
-
     return (
-        <main style={{ paddingTop: '100px' }}>
+        <main style={{ paddingTop: '80px' }}>
+            <FadeInObserver selectors=".fade-in, .expertise-card" />
             <Expertise />
         </main>
     );

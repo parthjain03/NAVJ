@@ -1,56 +1,53 @@
-"use client";
-import React, { useEffect } from 'react';
+import React from 'react';
 import Link from 'next/link';
+import FadeInObserver from '@/components/FadeInObserver';
+
+export const metadata = {
+    title: 'Taxation',
+    description: 'Income Tax advisory, corporate tax planning, TDS compliance, and appellate representation before CIT(A) and ITAT from expert Chartered Accountants in New Delhi.',
+    openGraph: {
+        title: 'Taxation | NAVJ & Co.',
+        description: 'Income Tax planning, corporate tax advisory, TDS compliance, and litigation from CA firm in New Delhi.',
+        url: 'https://navjco.com/services/taxation',
+    },
+};
+
+const services = [
+    {
+        title: 'Income Tax Advisory & Litigation',
+        desc: 'Strategic tax planning, return preparation, and robust representation before appellate authorities including CIT(A) and ITAT.',
+    },
+    {
+        title: 'Corporate Taxation & Advisory',
+        desc: 'Comprehensive advisory services tailored for corporate entities to minimise tax liabilities and ensure strict adherence to direct tax laws.',
+    },
+    {
+        title: 'TDS Consultancy',
+        desc: 'Expert guidance on Tax Deducted at Source compliance, reconciliation, and timely return filing to prevent regulatory penalties.',
+    },
+    {
+        title: 'Tax Planning & Structuring',
+        desc: 'Proactive structuring of transactions, investments, and business arrangements to achieve tax efficiency within the bounds of applicable law.',
+    },
+];
 
 export default function TaxationPage() {
-    useEffect(() => {
-        document.title = 'Taxation & GST | NAVJ & Co.';
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-        return () => observer.disconnect();
-    }, []);
-
-    const services = [
-        {
-            title: 'Income Tax Advisory & Litigation',
-            desc: 'Strategic tax planning, return preparation, and robust representation before appellate authorities including CIT(A) and ITAT.',
-        },
-        {
-            title: 'GST Compliance & Litigation',
-            desc: 'End-to-end management of GST life-cycles from registration and return filing to input tax credit optimization and departmental responses.',
-        },
-        {
-            title: 'Corporate Taxation & Advisory',
-            desc: 'Comprehensive advisory services tailored for corporate entities to minimize tax liabilities and ensure strict adherence to direct tax laws.',
-        },
-        {
-            title: 'TDS Consultancy',
-            desc: 'Expert guidance on Tax Deducted at Source compliance, reconciliation, and timely return filing to prevent regulatory penalties.',
-        },
-    ];
-
     return (
-        <main style={{ paddingTop: '100px' }}>
-            <section className="py-32 px-8">
+        <main style={{ paddingTop: '80px' }}>
+            <FadeInObserver />
+            <section className="py-16 px-8">
                 <div className="section-header fade-in">
                     <span className="section-eyebrow">Practice Area</span>
-                    <h2 className="section-title">Taxation & GST</h2>
+                    <h2 className="section-title">Taxation</h2>
                     <p className="section-lead">
-                        Comprehensive compliance management for direct and indirect taxes.
+                        Strategic direct tax compliance, planning, and representation.
                     </p>
                     <div className="gold-rule"></div>
                 </div>
 
-                <div className="max-w-4xl mx-auto fade-in" style={{ marginBottom: '4rem' }}>
+                <div className="max-w-4xl mx-auto fade-in" style={{ marginBottom: '2rem' }}>
                     <p className="tl-content-body" style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto' }}>
-                        Our taxation practice spans the full lifecycle of direct and indirect tax compliance. From Income Tax return preparation and appellate representation to end-to-end GST management, we provide proactive, accurate, and strategic tax advisory.
+                        Our taxation practice covers the full spectrum of direct tax obligations for individuals, firms, and corporates. From return preparation and proactive planning to appellate representation before the highest tribunals, we provide precise, strategic, and commercially aware tax advisory.
                     </p>
                 </div>
 
@@ -65,9 +62,9 @@ export default function TaxationPage() {
                     ))}
                 </div>
 
-                <div className="flex justify-center fade-in">
+                <div className="flex justify-center fade-in" style={{ marginTop: '2.5rem' }}>
                     <Link href="/services" className="btn-series">
-                        ← Back to All Services
+                        Back to All Services
                     </Link>
                 </div>
             </section>

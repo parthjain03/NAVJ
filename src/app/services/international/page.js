@@ -1,68 +1,65 @@
-"use client";
-import React, { useEffect } from 'react';
+import React from 'react';
 import Link from 'next/link';
+import FadeInObserver from '@/components/FadeInObserver';
+
+export const metadata = {
+    title: 'International Services',
+    description: 'India Entry (FDI), NRI taxation, transfer pricing, and cross-border structuring. Expert guidance for global businesses navigating India\'s regulatory landscape.',
+    openGraph: {
+        title: 'International Services | NAVJ & Co.',
+        description: 'India Entry strategy, NRI taxation, transfer pricing and cross-border advisory from New Delhi CAs.',
+        url: 'https://navjco.com/services/international',
+    },
+};
+
+const steps = [
+    { num: '01', title: 'Entity Structuring', desc: 'Advising on the optimal legal structure (subsidiary, branch office, liaison office, or LLP) based on your business objectives and regulatory requirements.' },
+    { num: '02', title: 'Regulatory Approvals', desc: 'Navigating RBI automatic and government route approvals, FEMA compliance, and sectoral cap requirements for foreign direct investment.' },
+    { num: '03', title: 'Tax Registration', desc: 'Complete setup of PAN, TAN, GST registration, and compliance frameworks. Structuring operations for optimal tax efficiency under DTAA provisions.' },
+    { num: '04', title: 'Ongoing Compliance', desc: 'Annual filings, transfer pricing documentation, FEMA reporting, and statutory audit. Ensuring continuous compliance as your India operations scale.' },
+];
+
+const services = [
+    {
+        title: 'India Entry Strategy (FDI)',
+        desc: 'Comprehensive advisory for foreign companies establishing operations in India. From entity selection and incorporation to regulatory approvals and operational setup, we guide your entry into the Indian market.',
+    },
+    {
+        title: 'NRI Taxation',
+        desc: 'Specialised tax advisory for Non-Resident Indians covering residential status determination, DTAA benefits, capital gains on Indian assets, rental income compliance, and repatriation of funds.',
+    },
+    {
+        title: 'Transfer Pricing',
+        desc: 'Documentation, benchmarking, and compliance for related-party international transactions under Indian transfer pricing regulations. We ensure arm\'s length pricing and defend positions before tax authorities.',
+    },
+    {
+        title: 'Cross-Border Structuring',
+        desc: 'Strategic structuring of international transactions, holding company arrangements, and treaty planning. We optimise cross-border operations while maintaining full regulatory compliance.',
+    },
+];
 
 export default function InternationalPage() {
-    useEffect(() => {
-        document.title = 'International Services | NAVJ & Co.';
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-        return () => observer.disconnect();
-    }, []);
-
-    const steps = [
-        { num: '01', title: 'Entity Structuring', desc: 'Advising on the optimal legal structure — subsidiary, branch office, liaison office, or LLP — based on your business objectives and regulatory requirements.' },
-        { num: '02', title: 'Regulatory Approvals', desc: 'Navigating RBI automatic and government route approvals, FEMA compliance, and sectoral cap requirements for foreign direct investment.' },
-        { num: '03', title: 'Tax Registration', desc: 'Complete setup of PAN, TAN, GST registration, and compliance frameworks. Structuring operations for optimal tax efficiency under DTAA provisions.' },
-        { num: '04', title: 'Ongoing Compliance', desc: 'Annual filings, transfer pricing documentation, FEMA reporting, and statutory audit. Ensuring continuous compliance as your India operations scale.' },
-    ];
-
-    const services = [
-        {
-            title: 'India Entry Strategy (FDI)',
-            desc: 'Comprehensive advisory for foreign companies establishing operations in India. From entity selection and incorporation to regulatory approvals and operational setup, we guide your entry into the Indian market.',
-        },
-        {
-            title: 'NRI Taxation',
-            desc: 'Specialised tax advisory for Non-Resident Indians covering residential status determination, DTAA benefits, capital gains on Indian assets, rental income compliance, and repatriation of funds.',
-        },
-        {
-            title: 'Transfer Pricing',
-            desc: 'Documentation, benchmarking, and compliance for related-party international transactions under Indian transfer pricing regulations. We ensure arm\'s length pricing and defend positions before tax authorities.',
-        },
-        {
-            title: 'Cross-Border Structuring',
-            desc: 'Strategic structuring of international transactions, holding company arrangements, and treaty planning. We optimise cross-border operations while maintaining full regulatory compliance.',
-        },
-    ];
-
     return (
-        <main style={{ paddingTop: '100px' }}>
-            <section className="py-32 px-8">
+        <main style={{ paddingTop: '80px' }}>
+            <FadeInObserver />
+            <section className="py-16 px-8">
                 <div className="section-header fade-in">
                     <span className="section-eyebrow">Practice Area</span>
                     <h2 className="section-title">International Services</h2>
                     <p className="section-lead">
-                        Navigating India's regulatory landscape for global businesses.
+                        Navigating India&apos;s regulatory landscape for global businesses.
                     </p>
                     <div className="gold-rule"></div>
                 </div>
 
-                <div className="max-w-4xl mx-auto fade-in" style={{ marginBottom: '4rem' }}>
+                <div className="max-w-4xl mx-auto fade-in" style={{ marginBottom: '2rem' }}>
                     <p className="tl-content-body" style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto' }}>
-                        Whether you are a foreign enterprise entering India, an NRI managing assets across borders, or a multinational optimizing transfer pricing, our International Services desk provides end-to-end regulatory and tax advisory rooted in decades of cross-border experience.
+                        Whether you are a foreign enterprise entering India, an NRI managing assets across borders, or a multinational optimising transfer pricing, our International Services desk provides end-to-end regulatory and tax advisory rooted in decades of cross-border experience.
                     </p>
                 </div>
 
                 {/* India Entry Process */}
-                <div className="max-w-4xl mx-auto fade-in" style={{ marginBottom: '5rem' }}>
+                <div className="max-w-4xl mx-auto fade-in" style={{ marginBottom: '3rem' }}>
                     <h3 className="tl-content-title" style={{ textAlign: 'center', marginBottom: '3rem' }}>India Entry: The Process</h3>
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                         {steps.map((step, i) => (
@@ -95,7 +92,7 @@ export default function InternationalPage() {
                 </div>
 
                 {/* CTA */}
-                <div className="text-center fade-in" style={{ marginTop: '5rem' }}>
+                <div className="text-center fade-in" style={{ marginTop: '3rem' }}>
                     <p className="section-lead" style={{ marginBottom: '2rem' }}>
                         Planning to enter the Indian market?
                     </p>
@@ -106,7 +103,7 @@ export default function InternationalPage() {
 
                 <div className="flex justify-center fade-in" style={{ marginTop: '3rem' }}>
                     <Link href="/services" className="btn-series">
-                        ← Back to All Services
+                        Back to All Services
                     </Link>
                 </div>
             </section>

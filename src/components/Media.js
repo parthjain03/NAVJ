@@ -16,7 +16,7 @@ export default function Media() {
                     <div className="video-wrapper">
                         <iframe
                             src="https://www.youtube.com/embed/5CJ3Wka6ENo"
-                            title="Industry Dialogues — FIEA Podcast featuring CA. Adeep Veer Jain"
+                            title="Industry Dialogues: FIEA Podcast featuring CA. Adeep Veer Jain"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
                             loading="lazy"
@@ -46,33 +46,6 @@ export default function Media() {
                 </div>
             </div>
 
-            {/* Gallery Filmstrip */}
-            <div className="gallery-header fade-in">
-                <h4 className="gallery-title">Life at NAVJ</h4>
-                <div className="gallery-rule"></div>
-            </div>
-
-            <div className="gallery-strip fade-in">
-                <div className="gallery-item">
-                    <span className="gallery-item-label">Seminar at FIEA</span>
-                </div>
-
-                <div className="gallery-item">
-                    <span className="gallery-item-label">Annual General Meeting</span>
-                </div>
-
-                <div className="gallery-item">
-                    <span className="gallery-item-label">Community Leadership</span>
-                </div>
-
-                <div className="gallery-item">
-                    <span className="gallery-item-label">Industry Dialogue</span>
-                </div>
-
-                <div className="gallery-item">
-                    <span className="gallery-item-label">Darya Ganj Office</span>
-                </div>
-            </div>
         </section>
     );
 }

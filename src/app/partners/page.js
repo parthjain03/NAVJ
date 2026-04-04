@@ -1,25 +1,21 @@
-"use client";
-import React, { useEffect } from 'react';
+import React from 'react';
 import Leadership from '@/components/Leadership';
+import FadeInObserver from '@/components/FadeInObserver';
+
+export const metadata = {
+    title: 'Partners',
+    description: 'Meet the partners and leadership team at NAVJ & Co., Chartered Accountants with decades of experience in taxation, audit, and advisory.',
+    openGraph: {
+        title: 'Partners | NAVJ & Co.',
+        description: 'Meet the partners and leadership team at NAVJ & Co.',
+        url: 'https://navjco.com/partners',
+    },
+};
 
 export default function PartnersPage() {
-    useEffect(() => {
-        document.title = 'Partners | NAVJ & Co.';
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.fade-in, .board-feature-card, .board-partner-card').forEach(el => observer.observe(el));
-        return () => observer.disconnect();
-    }, []);
-
     return (
-        <main style={{ paddingTop: '100px' }}>
+        <main style={{ paddingTop: '80px' }}>
+            <FadeInObserver selectors=".fade-in, .board-feature-card, .board-partner-card" />
             <Leadership />
         </main>
     );

@@ -1,30 +1,27 @@
-"use client";
-import React, { useEffect } from 'react';
+import React from 'react';
+import FadeInObserver from '@/components/FadeInObserver';
+
+export const metadata = {
+    title: 'Careers',
+    description: 'Join NAVJ & Co. We are always looking for talented Chartered Accountants, Advocates, Cost Accountants, and article assistants committed to excellence.',
+    openGraph: {
+        title: 'Careers | NAVJ & Co.',
+        description: 'Build your career at a four-generation CA firm in New Delhi.',
+        url: 'https://navjco.com/careers',
+    },
+};
+
+const values = [
+    { title: 'Client Satisfaction', body: 'Our paramount focus is the complete satisfaction of our clients. We believe a true financial partnership extends beyond basic compliance to deliver actionable results that empower long-term growth.' },
+    { title: 'Institutional Integrity', body: 'With a lineage spanning four generations, integrity is our inheritance. We uphold transparency and rigour as the non-negotiable foundations of our professional conduct.' },
+    { title: 'Evolutionary Thinking', body: 'We bridge decades of wisdom with modern digital intelligence. By blending traditional financial ethics with advanced technological systems, we confidently navigate the global economy.' },
+];
 
 export default function CareersPage() {
-    useEffect(() => {
-        document.title = 'Careers | NAVJ & Co.';
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-        return () => observer.disconnect();
-    }, []);
-
-    const values = [
-        { title: 'Client Satisfaction', body: 'Our paramount focus is the complete satisfaction of our clients. We believe a true financial partnership extends beyond basic compliance to deliver actionable results that empower long-term growth.' },
-        { title: 'Institutional Integrity', body: 'With a lineage spanning four generations, integrity is our inheritance. We uphold transparency and rigour as the non-negotiable foundations of our professional conduct.' },
-        { title: 'Evolutionary Thinking', body: 'We bridge decades of wisdom with modern digital intelligence. By blending traditional financial ethics with advanced technological systems, we confidently navigate the global economy.' },
-    ];
-
     return (
-        <main style={{ paddingTop: '100px' }}>
-            <section className="py-32 px-8">
+        <main style={{ paddingTop: '80px' }}>
+            <FadeInObserver />
+            <section className="py-16 px-8">
                 {/* Header */}
                 <div className="section-header fade-in">
                     <span className="section-eyebrow">Join Our Firm</span>
@@ -36,7 +33,7 @@ export default function CareersPage() {
                 </div>
 
                 {/* Culture Values */}
-                <div style={{ marginBottom: '5rem' }}>
+                <div style={{ marginBottom: '3rem' }}>
                     <div className="section-header fade-in">
                         <h3 className="section-title">Our Culture</h3>
                         <p className="section-lead" style={{ textAlign: 'left' }}>
@@ -61,7 +58,7 @@ export default function CareersPage() {
                         <div className="gold-rule"></div>
                     </div>
                     <p className="tl-content-body" style={{ marginBottom: '2.5rem' }}>
-                        We are always on the lookout for talented Chartered Accountants, Advocates, Cost Accountants, and article assistants who share our commitment to excellence and integrity.
+                        We are always on the lookout for talented Chartered Accountants, Advocates, Cost Accountants, article assistants, and paid assistants who share our commitment to excellence and integrity.
                     </p>
 
                     <div style={{
@@ -71,11 +68,14 @@ export default function CareersPage() {
                         border: '1px solid rgba(10, 25, 47, 0.06)',
                     }}>
                         <p className="tl-content-sub" style={{ marginBottom: '0.75rem' }}>How to Apply</p>
-                        <p className="tl-content-body" style={{ marginBottom: '1.5rem', fontSize: '0.9rem' }}>
-                            Please send your CV and a brief cover letter to the email address below, mentioning the role you are interested in.
+                        <p className="tl-content-body" style={{ marginBottom: '0.75rem', fontSize: '0.9rem' }}>
+                            To apply, please visit our Contact page and select <strong>Careers</strong> as the subject. Attach your CV and include a brief note on the role you are interested in.
                         </p>
-                        <a href="mailto:adeepjain.ca@gmail.com?subject=Career Inquiry — NAVJ %26 Co." className="btn-agree" style={{ textDecoration: 'none' }}>
-                            Send Your Application
+                        <p className="tl-content-body" style={{ marginBottom: '1.5rem', fontSize: '0.85rem', color: 'var(--text-muted)', fontStyle: 'italic' }}>
+                            We review all applications carefully and will be in touch if your profile is a suitable fit.
+                        </p>
+                        <a href="/contact" className="btn-agree" style={{ textDecoration: 'none' }}>
+                            Go to Contact Page
                         </a>
                     </div>
                 </div>

@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import Link from 'next/link';
 
@@ -5,24 +6,36 @@ export default function Expertise() {
     const services = [
         {
             num: 'I',
-            title: 'Taxation & GST',
-            tagline: 'Comprehensive compliance management for direct and indirect taxes. We handle Income Tax representation, Appeals, and end-to-end GST lifecycles, from registration to complex notice handling and advisory.',
+            title: 'Taxation',
+            tagline: 'Strategic Income Tax planning, corporate tax advisory, TDS compliance, and robust representation before appellate authorities including CIT(A) and ITAT.',
             href: '/services/taxation',
         },
         {
             num: 'II',
+            title: 'GST & Indirect Tax',
+            tagline: 'End-to-end management of GST lifecycles, from registration and return filing to input tax credit optimisation, departmental notices, and litigation.',
+            href: '/services/gst',
+        },
+        {
+            num: 'III',
             title: 'Audit & Assurance',
             tagline: 'Delivering financial clarity through Statutory, Internal, and Tax Audits. Our approach ensures rigorous compliance with Indian Accounting Standards (Ind AS) and regulatory frameworks.',
             href: '/services/audit',
         },
         {
-            num: 'III',
-            title: 'Advisory & FEMA',
-            tagline: 'Beyond accounting, we design financial infrastructures. Specializing in FEMA compliance, corporate advisory, system development, and Virtual CFO services for growing businesses.',
+            num: 'IV',
+            title: 'Labour Law',
+            tagline: 'End-to-end advisory and compliance across India\'s labour statutes. From PF and ESI to the new Labour Codes, contract labour, and employment dispute resolution.',
+            href: '/services/labour-law',
+        },
+        {
+            num: 'V',
+            title: 'Advisory',
+            tagline: 'Beyond accounting, we design financial infrastructures. Specialising in FEMA compliance, corporate advisory, system development, and Virtual CFO services for growing businesses.',
             href: '/services/advisory',
         },
         {
-            num: 'IV',
+            num: 'VI',
             title: 'International Services',
             tagline: 'Strategic guidance for India Entry (FDI), NRI taxation, transfer pricing, and cross-border structuring. We empower global businesses to navigate India\'s regulatory landscape.',
             href: '/services/international',
@@ -35,7 +48,7 @@ export default function Expertise() {
             <div className="section-header fade-in">
                 <span className="section-eyebrow">Practice Areas</span>
                 <h2 className="section-title">Expertise</h2>
-                <p className="section-lead">Four institutional disciplines. One integrated practice.</p>
+                <p className="section-lead">Six institutional disciplines. One integrated practice.</p>
                 <div className="gold-rule"></div>
             </div>
 

@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
+    const [servicesOpen, setServicesOpen] = useState(false);
     const pathname = usePathname();
 
     useEffect(() => {
@@ -31,6 +32,7 @@ export default function Navbar() {
             document.body.style.overflow = 'hidden';
         } else {
             document.body.style.overflow = '';
+            setServicesOpen(false);
         }
     };
 
@@ -45,9 +47,11 @@ export default function Navbar() {
     ];
 
     const serviceSubItems = [
+        { href: '/services/taxation', label: 'Taxation' },
+        { href: '/services/gst', label: 'GST & Indirect Tax' },
         { href: '/services/audit', label: 'Audit & Assurance' },
-        { href: '/services/taxation', label: 'Taxation & GST' },
-        { href: '/services/advisory', label: 'Advisory & FEMA' },
+        { href: '/services/labour-law', label: 'Labour Law' },
+        { href: '/services/advisory', label: 'Advisory' },
         { href: '/services/international', label: 'International Services' },
     ];
 
@@ -91,8 +95,33 @@ export default function Navbar() {
                 <button className="close-menu" onClick={toggleMenu}>&times;</button>
                 {navItems.map(item => (
                     <React.Fragment key={item.href}>
-                        <Link href={item.href} onClick={toggleMenu}>{item.label}</Link>
-                        {item.hasDropdown && serviceSubItems.map(sub => (
+                        {item.hasDropdown ? (
+                            <button
+                                onClick={() => setServicesOpen(!servicesOpen)}
+                                style={{
+                                    background: 'none',
+                                    border: 'none',
+                                    cursor: 'pointer',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '0.5rem',
+                                    color: 'inherit',
+                                    fontFamily: 'inherit',
+                                    fontSize: 'inherit',
+                                    letterSpacing: 'inherit',
+                                    textTransform: 'inherit',
+                                    padding: 0,
+                                    width: '100%',
+                                    justifyContent: 'center',
+                                }}
+                            >
+                                {item.label}
+                                <span style={{ fontSize: '0.75em', transition: 'transform 0.2s', display: 'inline-block', transform: servicesOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}>▾</span>
+                            </button>
+                        ) : (
+                            <Link href={item.href} onClick={toggleMenu}>{item.label}</Link>
+                        )}
+                        {item.hasDropdown && servicesOpen && serviceSubItems.map(sub => (
                             <Link key={sub.href} href={sub.href} onClick={toggleMenu} style={{
                                 fontSize: '1.2rem',
                                 opacity: 0.6,
