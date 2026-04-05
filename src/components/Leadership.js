@@ -20,7 +20,7 @@ const PARTNERS_DATA = [
     },
     {
         name: "CA Ravi Agrawal",
-        tag: "Partner",
+        tag: "Network Partner",
         bio: "CA Ravi Agrawal brings over 16 years of extensive experience across a wide array of professional services and industrial sectors. A Fellow Chartered Accountant holding a Bachelor of Commerce degree and an Information Systems Audit (DISA-ICAI) certification, he guides clients through complex financial transactions. His advisory portfolio spans diverse industries, including information technology, banking, private equity, automotive, pharmaceuticals, and manufacturing. He has cultivated profound expertise across corporate strategy, transfer pricing, audit assurance, direct taxation, and GST compliance. Driven by a steadfast dedication to exceptional service, he consistently fosters enduring, high-value client relationships."
     },
     {
