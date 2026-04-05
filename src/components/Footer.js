@@ -31,7 +31,7 @@ export default function Footer() {
                     <ul className="footer-contact-list">
                         <li><a href="tel:+919810061916">+91 98100 61916</a></li>
                         <li><a href="tel:01143105497">011-4310 5497</a></li>
-                        <li><a href="tel:01143560046">011-435-60046</a></li>
+                        <li><a href="tel:01143560046">011-43560046</a></li>
                         <li style={{ paddingTop: '0.4rem' }}>
                             <a href="mailto:adeepjain.ca@gmail.com">adeepjain.ca@gmail.com</a>
                         </li>
