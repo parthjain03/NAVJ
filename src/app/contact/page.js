@@ -49,7 +49,7 @@ export default function ContactPage() {
                             <p className="tl-content-body">
                                 <a href="tel:+919810061916" style={{ color: 'var(--slate)', textDecoration: 'none' }}>+91 98100 61916</a><br />
                                 <a href="tel:01143105497" style={{ color: 'var(--slate)', textDecoration: 'none' }}>011-4310 5497</a><br />
-                                <a href="tel:01143560046" style={{ color: 'var(--slate)', textDecoration: 'none' }}>011-43560046</a>
+                                <a href="tel:01143560046" style={{ color: 'var(--slate)', textDecoration: 'none' }}>011-4356 0046</a>
                             </p>
                         </div>
 

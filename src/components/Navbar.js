@@ -5,10 +5,10 @@ import { usePathname } from 'next/navigation';
 
 
 export default function Navbar() {
-    const [scrolled, setScrolled] = useState(false);
+    const pathname = usePathname();
+    const [scrolled, setScrolled] = useState(pathname !== '/');
     const [menuOpen, setMenuOpen] = useState(false);
     const [servicesOpen, setServicesOpen] = useState(false);
-    const pathname = usePathname();
 
     useEffect(() => {
         const handleScroll = () => {
