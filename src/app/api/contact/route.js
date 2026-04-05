@@ -1,4 +1,4 @@
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 
 function escapeHtml(str) {
@@ -9,6 +9,8 @@ function escapeHtml(str) {
         .replace(/"/g, '&quot;');
 }
 
+const resend = new Resend(process.env.RESEND_API_KEY);
+
 export async function POST(request) {
     try {
         const { name, email, phone, subject, message } = await request.json();
@@ -17,17 +19,9 @@ export async function POST(request) {
             return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
         }
 
-        const transporter = nodemailer.createTransport({
-            service: 'gmail',
-            auth: {
-                user: process.env.GMAIL_USER,
-                pass: process.env.GMAIL_APP_PASSWORD,
-            },
-        });
-
-        await transporter.sendMail({
-            from: `"NAVJ Website" <${process.env.GMAIL_USER}>`,
-            to: process.env.CONTACT_EMAIL_TO || process.env.GMAIL_USER,
+        await resend.emails.send({
+            from: 'NAVJ Website <onboarding@resend.dev>',
+            to: process.env.CONTACT_EMAIL_TO,
             replyTo: email,
             subject: `[NAVJ Website] ${subject || 'General Inquiry'}`,
             text: [

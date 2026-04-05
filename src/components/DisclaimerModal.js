@@ -1,10 +1,16 @@
 "use client";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function DisclaimerModal() {
-    const [isVisible, setIsVisible] = useState(true);
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const agreed = localStorage.getItem('disclaimer_agreed');
+        if (!agreed) setIsVisible(true);
+    }, []);
 
     const handleAgree = () => {
+        localStorage.setItem('disclaimer_agreed', '1');
         setIsVisible(false);
     };
 
