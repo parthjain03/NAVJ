@@ -42,7 +42,7 @@ export const metadata = {
                 url: '/images/og-home.png',
                 width: 1200,
                 height: 630,
-                alt: 'NAVJ & Co. Chartered Accountants, New Delhi. Est. 1932.',
+                alt: 'NAVJ & Co. Chartered Accountants, New Delhi.',
             },
         ],
     },

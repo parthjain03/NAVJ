@@ -105,14 +105,14 @@ export default function Navbar() {
                                     display: 'flex',
                                     alignItems: 'center',
                                     gap: '0.5rem',
-                                    color: 'inherit',
-                                    fontFamily: 'inherit',
-                                    fontSize: 'inherit',
-                                    letterSpacing: 'inherit',
-                                    textTransform: 'inherit',
                                     padding: 0,
                                     width: '100%',
                                     justifyContent: 'center',
+                                    fontFamily: 'var(--font-playfair), serif',
+                                    fontSize: '2rem',
+                                    letterSpacing: '0.05em',
+                                    color: 'var(--cream)',
+                                    opacity: 0.9,
                                 }}
                             >
                                 {item.label}

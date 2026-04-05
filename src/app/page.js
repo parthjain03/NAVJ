@@ -3,10 +3,10 @@ import Hero from '@/components/Hero';
 import FadeInObserver from '@/components/FadeInObserver';
 
 export const metadata = {
-    title: 'NAVJ & Co. | Chartered Accountants, Est. 1932, New Delhi',
+    title: 'NAVJ & Co. | Chartered Accountants, New Delhi',
     description: 'Four generations of financial stewardship since 1932. NAVJ & Co. is a premier CA firm in New Delhi offering Taxation, Audit, Advisory, and International Services.',
     openGraph: {
-        title: 'NAVJ & Co. | Chartered Accountants, Est. 1932',
+        title: 'NAVJ & Co. | Chartered Accountants, New Delhi',
         description: 'Four generations of financial stewardship since 1932. Premier CA firm in New Delhi.',
         url: 'https://navjco.com',
         type: 'website',

@@ -376,7 +376,8 @@ nav.scrolled {
     display: flex;
 }
 
-.mobile-menu a {
+.mobile-menu a,
+.mobile-menu button {
     font-family: var(--font-playfair), serif;
     font-size: 2rem;
     letter-spacing: 0.05em;
@@ -386,7 +387,8 @@ nav.scrolled {
     transition: opacity 0.3s, color 0.3s;
 }
 
-.mobile-menu a:hover {
+.mobile-menu a:hover,
+.mobile-menu button:hover {
     opacity: 1;
     color: var(--gold);
 }
